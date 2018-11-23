@@ -15,7 +15,7 @@
           <leftOperand xmi:type="expression:Expression" xmi:id="_wN2qIe75EeiTfsUnMB67tA" name="tasks" content="tasks" type="TYPE_VARIABLE" returnType="java.util.List">
             <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_z3BJMO75EeiTfsUnMB67tA" name="tasks" multiple="true" dataType="_Yk3m1O75EeiTfsUnMB67tA" className="com.company.model.Task"/>
           </leftOperand>
-          <rightOperand xmi:type="expression:Expression" xmi:id="_wN2qIu75EeiTfsUnMB67tA" name="createTask()" content="def task = taskDAO.newInstance()&#xD;&#xA;task.assigneeId = userId&#xD;&#xA;task.name = &quot;Task for &quot; + apiAccessor.getIdentityAPI().getUser(userId).getUserName()&#xD;&#xA;task" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Task">
+          <rightOperand xmi:type="expression:Expression" xmi:id="_wN2qIu75EeiTfsUnMB67tA" name="createTask()" content="def task = taskDAO.newInstance()&#xD;&#xA;task.assigneeId = userId&#xD;&#xA;task.name = &quot;Task for &quot; + apiAccessor.getIdentityAPI().getUser(userId).getUserName()&#xD;&#xA;task" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object">
             <referencedElements xmi:type="expression:Expression" xmi:id="_gkeaIO78Eeiw_KrnyZOhlw" name="taskDAO" content="taskDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.TaskDAO" returnTypeFixed="true"/>
             <referencedElements xmi:type="expression:Expression" xmi:id="_gkeaIe78Eeiw_KrnyZOhlw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="com.bonitasoft.engine.api.APIAccessor"/>
             <referencedElements xmi:type="process:Data" xmi:id="_gkeaIu78Eeiw_KrnyZOhlw" name="userId" dataType="_Yk3mz-75EeiTfsUnMB67tA"/>
