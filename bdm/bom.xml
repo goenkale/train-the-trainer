@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel modelVersion="1.0" productVersion="7.8.0-SNAPSHOT">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.Task">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="true" collection="false"/>
+                <field type="LONG" length="255" name="assigneeId" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries>
+                <query name="findByAssignees" content="SELECT t &#xA;FROM Task t &#xA;WHERE assigneeId IN (:assigneeId)&#xA;ORDER BY t.persistenceId ASC" returnType="java.util.List">
+                    <queryParameters>
+                        <queryParameter name="assignees" className="[Ljava.lang.Long;"/>
+                    </queryParameters>
+                </query>
+                <query name="countForFindByAssignees" content="SELECT COUNT(t) &#xD;&#xA;FROM Task t &#xD;&#xA;WHERE assigneeId IN (:assignees)" returnType="java.lang.Long">
+                    <queryParameters>
+                        <queryParameter name="assignees" className="[Ljava.lang.Long;"/>
+                    </queryParameters>
+                </query>
+            </queries>
+            <indexes>
+                <index name="ASSINEE_ID_INDEX">
+                    <fieldNames>
+                        <fieldName>assigneeId</fieldName>
+                    </fieldNames>
+                </index>
+            </indexes>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
