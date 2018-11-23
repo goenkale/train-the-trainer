@@ -1,0 +1,310 @@
+{
+  "designerVersion" : "1.8.15",
+  "id" : "InClauseExample",
+  "name" : "InClauseExample",
+  "lastUpdate" : 1542967975157,
+  "rows" : [ [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "IN Clause examples"
+      },
+      "level" : {
+        "type" : "constant",
+        "value" : "Level 2"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "dddcb66b-1802-4d7a-81ea-fd9cdd623e07",
+    "id" : "pbTitle"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "allowHTML" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "<h3>Using a REST API Extension<h3>"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "7580cf2d-16d6-46a2-909f-39f51f39e5a7",
+    "id" : "pbText"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "headers" : {
+        "type" : "constant",
+        "value" : [ "Id", "Name" ]
+      },
+      "type" : {
+        "type" : "constant",
+        "value" : "Bonita API"
+      },
+      "apiUrl" : {
+        "type" : "constant",
+        "value" : "../API/extension/task"
+      },
+      "params" : {
+        "type" : "constant"
+      },
+      "content" : {
+        "type" : "constant"
+      },
+      "columnsKey" : {
+        "type" : "constant",
+        "value" : [ "id", "name" ]
+      },
+      "sortColumns" : {
+        "type" : "constant"
+      },
+      "selectedRow" : {
+        "type" : "variable",
+        "value" : ""
+      },
+      "pageSize" : {
+        "type" : "constant",
+        "value" : 1
+      },
+      "filter" : {
+        "type" : "constant"
+      }
+    },
+    "reference" : "012e7454-daea-4891-a288-fa66035d9910",
+    "id" : "pbDataTable"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "allowHTML" : {
+        "type" : "constant",
+        "value" : true
+      },
+      "text" : {
+        "type" : "interpolation",
+        "value" : "<h3>Using generic BDM REST API"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "left"
+      }
+    },
+    "reference" : "285469ad-10c6-4b2c-9f71-ca8b9c31324f",
+    "id" : "pbText"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "disabled" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "inline" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "labelHidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Users"
+      },
+      "labelPosition" : {
+        "type" : "constant",
+        "value" : "top"
+      },
+      "labelWidth" : {
+        "type" : "constant",
+        "value" : 4
+      },
+      "availableValues" : {
+        "type" : "expression",
+        "value" : "users"
+      },
+      "displayedKey" : {
+        "type" : "constant",
+        "value" : "userName"
+      },
+      "returnedKey" : {
+        "type" : "constant",
+        "value" : "id"
+      },
+      "selectedValues" : {
+        "type" : "variable",
+        "value" : "selectedUsers"
+      }
+    },
+    "reference" : "39713cab-733d-4047-adf1-8adfbd8b44de",
+    "id" : "pbChecklist"
+  } ], [ {
+    "type" : "component",
+    "dimension" : {
+      "xs" : 12,
+      "sm" : 12,
+      "md" : 12,
+      "lg" : 12
+    },
+    "propertyValues" : {
+      "cssClasses" : {
+        "type" : "constant",
+        "value" : ""
+      },
+      "hidden" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "headers" : {
+        "type" : "constant",
+        "value" : [ "Id", "Name" ]
+      },
+      "type" : {
+        "type" : "constant",
+        "value" : "Bonita API"
+      },
+      "apiUrl" : {
+        "type" : "constant",
+        "value" : "../API/bdm/businessData/com.company.model.Task"
+      },
+      "params" : {
+        "type" : "expression",
+        "value" : "defaultQuery"
+      },
+      "content" : {
+        "type" : "constant"
+      },
+      "columnsKey" : {
+        "type" : "constant",
+        "value" : [ "persistenceId", "name" ]
+      },
+      "sortColumns" : {
+        "type" : "constant"
+      },
+      "selectedRow" : {
+        "type" : "variable",
+        "value" : ""
+      },
+      "pageSize" : {
+        "type" : "constant",
+        "value" : 5
+      },
+      "filter" : {
+        "type" : "constant"
+      }
+    },
+    "reference" : "8faa2aa3-57a0-41fc-901a-f891bd2d1ea4",
+    "id" : "pbDataTable"
+  } ] ],
+  "assets" : [ {
+    "id" : "8af2e70a-9294-4238-8219-513eaf2ccec2",
+    "name" : "style.css",
+    "type" : "css",
+    "order" : 0,
+    "external" : false
+  }, {
+    "id" : "8f3ee38c-518c-4893-86c4-6ec3185b5688",
+    "name" : "localization.json",
+    "type" : "json",
+    "order" : 0,
+    "external" : false
+  } ],
+  "inactiveAssets" : [ ],
+  "data" : {
+    "users" : {
+      "type" : "url",
+      "value" : "../API/identity/user?p=0&c=99",
+      "exposed" : false
+    },
+    "selectedUsers" : {
+      "type" : "constant",
+      "exposed" : false
+    },
+    "defaultQuery" : {
+      "type" : "expression",
+      "value" : "if(!$data.selectedUsers){\nreturn {\n \"q\" : \"findByAssignees\",\n \"f\" : \"assignees=\"\n}\n}else{\n    return {\n  \"q\" : \"findByAssignees\",\n  \"f\" : \"assignees=\"+$data.selectedUsers.join(\",\")\n}\n}",
+      "exposed" : false
+    }
+  },
+  "uuid" : "dacdc1f5-82ec-42c0-a282-318b37d113e7",
+  "type" : "page",
+  "description" : "Page generated with Bonita UI designer",
+  "displayName" : "newPage page"
+}
