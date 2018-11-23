@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:decision="http://www.bonitasoft.org/ns/studio/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/studio/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process" xsi:schemaLocation="http://www.bonitasoft.org/ns/studio/process/decision http://www.bonitasoft.org/ns/studio/process#//decision">
-  <process:MainProcess xmi:id="_Yk3moO75EeiTfsUnMB67tA" name="Create Tasks" author="Romain" bonitaVersion="7.8.0" bonitaModelVersion="7.8.0-002" configId="ACED000574001C4D6F6E4469616772616D6D65372E382E302D303032372E382E307370">
+  <process:MainProcess xmi:id="_Yk3moO75EeiTfsUnMB67tA" name="Create Tasks" author="Romain" bonitaVersion="7.8.0" bonitaModelVersion="7.8.0-002" configId="ACED000574001C437265617465205461736B73372E382E302D303032372E382E307370">
     <elements xmi:type="process:Pool" xmi:id="_Yk3moe75EeiTfsUnMB67tA" name="Create Tasks">
       <elements xmi:type="process:StartEvent" xmi:id="_Yk3mo-75EeiTfsUnMB67tA" name="Démarrer1" outgoing="_Yk3muO75EeiTfsUnMB67tA">
         <dynamicLabel xmi:type="expression:Expression" xmi:id="_Yk3mpO75EeiTfsUnMB67tA" name="" content="" returnTypeFixed="true"/>
@@ -13,10 +13,16 @@
         <stepSummary xmi:type="expression:Expression" xmi:id="_Yk3mqu75EeiTfsUnMB67tA" name="" content="" returnTypeFixed="true"/>
         <operations xmi:type="expression:Operation" xmi:id="_wN2qIO75EeiTfsUnMB67tA">
           <leftOperand xmi:type="expression:Expression" xmi:id="_wN2qIe75EeiTfsUnMB67tA" name="tasks" content="tasks" type="TYPE_VARIABLE" returnType="java.util.List">
-            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_z3BJMO75EeiTfsUnMB67tA" name="tasks" dataType="_Yk3m1O75EeiTfsUnMB67tA" className="com.company.model.Task"/>
+            <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_z3BJMO75EeiTfsUnMB67tA" name="tasks" multiple="true" dataType="_Yk3m1O75EeiTfsUnMB67tA" className="com.company.model.Task"/>
           </leftOperand>
-          <rightOperand xmi:type="expression:Expression" xmi:id="_wN2qIu75EeiTfsUnMB67tA" content=""/>
-          <operator xmi:type="expression:Operator" xmi:id="_wN2qI-75EeiTfsUnMB67tA" type="ASSIGNMENT"/>
+          <rightOperand xmi:type="expression:Expression" xmi:id="_wN2qIu75EeiTfsUnMB67tA" name="createTask()" content="def task = taskDAO.newInstance()&#xD;&#xA;task.assigneeId = userId&#xD;&#xA;task.name = &quot;Task for &quot; + apiAccessor.getIdentityAPI().getUser(userId).getUserName()&#xD;&#xA;task" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Task">
+            <referencedElements xmi:type="expression:Expression" xmi:id="_gkeaIO78Eeiw_KrnyZOhlw" name="taskDAO" content="taskDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.TaskDAO" returnTypeFixed="true"/>
+            <referencedElements xmi:type="expression:Expression" xmi:id="_gkeaIe78Eeiw_KrnyZOhlw" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="com.bonitasoft.engine.api.APIAccessor"/>
+            <referencedElements xmi:type="process:Data" xmi:id="_gkeaIu78Eeiw_KrnyZOhlw" name="userId" dataType="_Yk3mz-75EeiTfsUnMB67tA"/>
+          </rightOperand>
+          <operator xmi:type="expression:Operator" xmi:id="_wN2qI-75EeiTfsUnMB67tA" type="JAVA_METHOD" expression="add">
+            <inputTypes>java.lang.Object</inputTypes>
+          </operator>
         </operations>
         <loopCondition xmi:type="expression:Expression" xmi:id="_Yk3mq-75EeiTfsUnMB67tA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         <loopMaximum xmi:type="expression:Expression" xmi:id="_Yk3mrO75EeiTfsUnMB67tA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -24,16 +30,16 @@
         <iteratorExpression xmi:type="expression:Expression" xmi:id="_Yk3mru75EeiTfsUnMB67tA" name="userId" content="userId" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Long" returnTypeFixed="true"/>
         <completionCondition xmi:type="expression:Expression" xmi:id="_Yk3mr-75EeiTfsUnMB67tA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </elements>
-      <data xmi:type="process:BusinessObjectData" xmi:id="_kXW9QO75EeiTfsUnMB67tA" name="tasks" dataType="_Yk3m1O75EeiTfsUnMB67tA" className="com.company.model.Task">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_kXW9Qe75EeiTfsUnMB67tA" name="init_tasks()" content="[]" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List"/>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_kXW9QO75EeiTfsUnMB67tA" name="tasks" multiple="true" dataType="_Yk3m1O75EeiTfsUnMB67tA" className="com.company.model.Task">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_kXW9Qe75EeiTfsUnMB67tA" name="" content="" interpreter="GROOVY"/>
       </data>
       <data xmi:type="process:Data" xmi:id="_tjYn8O75EeiTfsUnMB67tA" name="users" multiple="true" dataType="_Yk3mz-75EeiTfsUnMB67tA">
         <defaultValue xmi:type="expression:Expression" xmi:id="_tjYn8e75EeiTfsUnMB67tA" name="init_users()" content="import org.bonitasoft.engine.search.SearchOptionsBuilder&#xD;&#xA;&#xD;&#xA;apiAccessor.getIdentityAPI().searchUsers(new SearchOptionsBuilder(0, 99).done()).result.collect{ it.id}" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
           <referencedElements xmi:type="expression:Expression" xmi:id="_tjYn8u75EeiTfsUnMB67tA" name="apiAccessor" content="apiAccessor" type="TYPE_ENGINE_CONSTANT" returnType="com.bonitasoft.engine.api.APIAccessor"/>
         </defaultValue>
       </data>
-      <formMapping xmi:type="process:FormMapping" xmi:id="_Yk3mtO75EeiTfsUnMB67tA">
-        <targetForm xmi:type="expression:Expression" xmi:id="_Yk3mte75EeiTfsUnMB67tA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+      <formMapping xmi:type="process:FormMapping" xmi:id="_Yk3mtO75EeiTfsUnMB67tA" type="NONE">
+        <targetForm xmi:type="expression:Expression" xmi:id="_rvPCYO78Eeiw_KrnyZOhlw" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_Yk3mtu75EeiTfsUnMB67tA">
         <targetForm xmi:type="expression:Expression" xmi:id="_Yk3mt-75EeiTfsUnMB67tA" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>

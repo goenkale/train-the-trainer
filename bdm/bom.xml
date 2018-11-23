@@ -8,12 +8,12 @@
             </fields>
             <uniqueConstraints/>
             <queries>
-                <query name="findByAssignees" content="SELECT t &#xA;FROM Task t &#xA;WHERE assigneeId IN (:assigneeId)&#xA;ORDER BY t.persistenceId ASC" returnType="java.util.List">
+                <query name="findByAssignees" content="SELECT t &#xA;FROM Task t &#xA;WHERE t.assigneeId IN (:assignees)&#xA;ORDER BY t.persistenceId ASC" returnType="java.util.List">
                     <queryParameters>
                         <queryParameter name="assignees" className="[Ljava.lang.Long;"/>
                     </queryParameters>
                 </query>
-                <query name="countForFindByAssignees" content="SELECT COUNT(t) &#xD;&#xA;FROM Task t &#xD;&#xA;WHERE assigneeId IN (:assignees)" returnType="java.lang.Long">
+                <query name="countForFindByAssignees" content="SELECT COUNT(t) &#xD;&#xA;FROM Task t &#xD;&#xA;WHERE  t.assigneeId IN (:assignees)" returnType="java.lang.Long">
                     <queryParameters>
                         <queryParameter name="assignees" className="[Ljava.lang.Long;"/>
                     </queryParameters>
